@@ -45,9 +45,9 @@
                         <h3><?= $user['alias'] ?></h3>
                         <p> id : <?= $user['id'] ?></p>                    
                     </article>
-                    <?php 
-                    }
-                    ?>
+                <?php 
+                }
+                ?>
             </main>
         </div>
     </body>
