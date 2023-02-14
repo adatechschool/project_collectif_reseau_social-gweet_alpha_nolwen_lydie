@@ -1,4 +1,4 @@
-CREATE TABLE `socialnetwork`.`boardgames` 
+CREATE TABLE IF NOT EXISTS `boardgames` 
     (`id` INT(10) NOT NULL AUTO_INCREMENT ,
     `name` VARCHAR (100) NOT NULL , 
     `min_age` INT(2) NOT NULL ,
@@ -21,3 +21,19 @@ VALUES
 ('Saboteur', 9, 3, 10, 'stratégie', 60, 'Frederic Moyersoen'), 
 ('Blanc Manger Coco', 18, 3, 12, 'ambiance', 60, 'Louis Roudaut'), 
 ('La Chose', 14,4,12,'bluff',30,'Antonio Ferrara');
+
+
+CREATE TABLE IF NOT EXISTS`users_boardgames` 
+(`id` INT NOT NULL AUTO_INCREMENT , 
+ `id_user` UNSIGNED NOT NULL,
+ `id_boardgame` INT , 
+ PRIMARY KEY (`id`),
+) 
+ ENGINE = InnoDB; 
+
+ ALTER TABLE `users_boardgames` 
+ ADD CONSTRAINT `fk_games_has_users` 
+ FOREIGN KEY (`id_boardgame`) REFERENCES `boardgames`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT; 
+ 
+
+ ALTER TABLE `users_boardgames` ADD CONSTRAINT `fk_users_has_games` FOREIGN KEY (`id_user`) REFERENCES `users`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT; 
