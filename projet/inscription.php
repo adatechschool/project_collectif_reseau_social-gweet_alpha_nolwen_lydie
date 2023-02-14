@@ -11,7 +11,7 @@
             include "header.php"
         ?>
 
-        <div id="wrapper" >
+        <div id="wrapper">
 
             <aside>
                 <h2>Présentation</h2>
@@ -26,7 +26,7 @@
                      */
                     // Etape 1 : vérifier si on est en train d'afficher ou de traiter le formulaire
                     // si on recoit un champs email rempli il y a une chance que ce soit un traitement
-                    if (isset($_POST['email']) && isset($_POST['pseudo']) && isset($_POST['motpasse']))
+                    if (!empty($_POST['email']) && !empty($_POST['pseudo']) && !empty($_POST['motpasse']))
                     {
                         $new_email = $_POST['email'];
                         $new_alias = $_POST['pseudo'];
@@ -59,10 +59,11 @@
                             echo "Votre inscription est un succès : " . $new_alias;
                             echo " <a href='login.php'>Connectez-vous.</a>";
                         }
+                    } else {
+                        echo "Vous devez remplir l'un des champs du formulaire";
                     }
                     ?>                     
                     <form action="inscription.php" method="post">
-                        <input type='hidden'name='???' value='achanger'>
                         <dl>
                             <dt><label for='pseudo'>Pseudo</label></dt>
                             <dd><input type='text'name='pseudo'></dd>
