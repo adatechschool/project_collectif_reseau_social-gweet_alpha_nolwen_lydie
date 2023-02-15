@@ -25,7 +25,7 @@ VALUES
 
 CREATE TABLE IF NOT EXISTS`users_boardgames` 
 (`id` INT NOT NULL AUTO_INCREMENT , 
- `id_user` UNSIGNED NOT NULL,
+ `id_user` INT UNSIGNED NOT NULL,
  `id_boardgame` INT , 
  PRIMARY KEY (`id`),
 ) 
