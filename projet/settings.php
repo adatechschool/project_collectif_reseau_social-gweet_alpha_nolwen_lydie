@@ -8,6 +8,7 @@
     </head>
     <body>
         <?php
+        include 'db.php';
         include 'header.php';
         ?>
         <div id="wrapper" class='profile'>
@@ -33,10 +34,6 @@
                  */
                 $userId = intval($_GET['user_id']);
 
-                /**
-                 * Etape 2: se connecter à la base de donnée
-                 */
-                include "db.php";
                 /**
                  * Etape 3: récupérer le nom de l'utilisateur
                  */

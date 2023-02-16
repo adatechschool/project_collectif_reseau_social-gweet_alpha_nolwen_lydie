@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if(isset($_SESSION['connected_id'])) {
+        header("Location: news.php");
+    }
+?>
 <!doctype html>
 <html lang="fr">
     <head>
@@ -8,7 +14,7 @@
     </head>
     <body>
         <?php 
-            include "header.php"
+            include "db.php";
         ?>
 
         <div id="wrapper">
@@ -57,7 +63,7 @@
                         } else
                         {
                             echo "Votre inscription est un succès : " . $new_alias;
-                            echo " <a href='login.php'>Connectez-vous.</a>";
+                            echo " <a href='connexion.php'>Connectez-vous.</a>";
                         }
                     } else {
                         echo "Vous devez remplir l'un des champs du formulaire";

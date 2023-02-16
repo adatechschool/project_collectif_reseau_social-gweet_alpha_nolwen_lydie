@@ -8,6 +8,7 @@
     </head>
     <body>
         <?php
+        include 'db.php';
         include 'header.php';
         ?>
         <div id="wrapper">
@@ -20,12 +21,6 @@
              * Etape 1: Le mur concerne un mot-clé en particulier
              */
             $tagId = intval($_GET['tag_id']);
-            ?>
-            <?php
-            /**
-             * Etape 2: se connecter à la base de donnée
-             */
-            include "db.php";
             ?>
 
             <aside>
@@ -42,7 +37,7 @@
                 <section>
                     <h3>Présentation</h3>
                     <p>Sur cette page vous trouverez les derniers messages comportant
-                        le mot-clé <i><?= $tag['label'] ?></i>
+                        le mot-clé <i><?= $tag['label']; ?></i>
                         (id : <?php echo $tagId ?>)
                     </p>
 

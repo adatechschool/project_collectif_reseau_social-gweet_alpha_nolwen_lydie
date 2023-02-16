@@ -1,4 +1,5 @@
-ALTER TABLE `boardgames` ADD `images` VARCHAR() NULL AFTER `description`; 
+
+ALTER TABLE `boardgames` ADD `images` TEXT NULL AFTER `description`;
 
 UPDATE boardgames
 SET images = ("https://github.com/adatechschool/project_collectif_reseau_social-gweet_alpha_nolwen_lydie/blob/master/images-pour-%20boardgames/7Wonders.jpeg?raw=true
