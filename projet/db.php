@@ -1,3 +1,3 @@
 <?php
-    $mysqli = new mysqli("localhost", "root", "root", "socialnetwork");
+    $mysqli = new mysqli("localhost:8889", "root", "root", "socialnetwork");
 ?>
