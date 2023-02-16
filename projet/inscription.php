@@ -1,6 +1,8 @@
 <?php
-    unset($_SESSION['connected_id']);
-    session_destroy();
+    session_start();
+    if(isset($_SESSION['connected_id'])) {
+        header("Location: news.php");
+    }
 ?>
 <!doctype html>
 <html lang="fr">
@@ -13,7 +15,6 @@
     <body>
         <?php 
             include "db.php";
-            include "header.php"
         ?>
 
         <div id="wrapper">
