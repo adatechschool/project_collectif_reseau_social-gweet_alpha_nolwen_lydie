@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!doctype html>
 <html lang="fr">
     <head>
@@ -8,7 +9,8 @@
     </head>
     <body>
         <?php
-        include 'header.php';
+            include 'header.php';
+            include "db.php";
         ?>
 
         <?php
@@ -77,7 +79,6 @@
                  */
                 while ($tag = $lesInformations->fetch_assoc())
                 {
-                   // echo "<pre>" . print_r($tag, 1) . "</pre>";
                     ?>
                     <article>
                         <h3><?= $tag["alias"] ?></h3>

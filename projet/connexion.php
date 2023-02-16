@@ -1,5 +1,7 @@
-<?php
-session_start();
+<?php 
+    if(isset($_SESSION['connected_id'])) {
+        header("Location: news.php");
+    }
 ?>
 <!doctype html>
 <html lang="fr">
@@ -11,11 +13,9 @@ session_start();
     </head>
     <body>
         <?php 
-            include "header.php"
+            include 'db.php';
         ?>
-
         <div id="wrapper" >
-
             <aside>
                 <h2>Présentation</h2>
                 <p>Bienvenu sur Gweet</p>
@@ -24,18 +24,9 @@ session_start();
                 <article>
                     <h2>Connexion</h2>
                     <?php
-                    /**
-                     * TRAITEMENT DU FORMULAIRE
-                     */
-                    // Etape 1 : vérifier si on est en train d'afficher ou de traiter le formulaire
-                    // si on recoit un champs email rempli il y a une chance que ce soit un traitement
                     $enCoursDeTraitement = isset($_POST['email']);
                     if ($enCoursDeTraitement)
                     {
-                        // on ne fait ce qui suit que si un formulaire a été soumis.
-                        // Etape 2: récupérer ce qu'il y a dans le formulaire @todo: c'est là que votre travaille se situe
-                        // observez le résultat de cette ligne de débug (vous l'effacerez ensuite)
-                        // et complétez le code ci dessous en remplaçant les ???
                         $emailAVerifier = $_POST['email'];
                         $passwdAVerifier = $_POST['motpasse'];
 
@@ -61,10 +52,8 @@ session_start();
                             
                         } else
                         {
-                            echo "Votre connexion est un succès : " . $user['alias'] . ".";
-                            // Etape 7 : Se souvenir que l'utilisateur s'est connecté pour la suite
-                            // documentation: https://www.php.net/manual/fr/session.examples.basic.php
                             $_SESSION['connected_id'] = $user['id'];
+                            header("Location: admin.php");
                         }
                     }
                     ?>                     
@@ -81,7 +70,6 @@ session_start();
                         Pas de compte?
                         <a href='inscription.php'>Inscrivez-vous.</a>
                     </p>
-
                 </article>
             </main>
         </div>

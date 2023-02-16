@@ -8,6 +8,7 @@
     </head>
     <body>
         <?php
+        include 'db.php';
         include 'header.php';
         ?>
         <div id="wrapper">
@@ -20,12 +21,6 @@
              * Etape 1: Le mur concerne un mot-clé en particulier
              */
             $tagId = intval($_GET['tag_id']);
-            ?>
-            <?php
-            /**
-             * Etape 2: se connecter à la base de donnée
-             */
-            include "db.php";
             ?>
 
             <aside>

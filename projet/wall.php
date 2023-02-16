@@ -8,6 +8,7 @@
     </head>
     <body>
         <?php
+        include 'db.php';
         include 'header.php';
         ?>
         <div id="wrapper">
@@ -101,3 +102,5 @@
         </div>
     </body>
 </html>
+
+
