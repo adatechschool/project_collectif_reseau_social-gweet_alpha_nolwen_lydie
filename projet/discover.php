@@ -81,6 +81,10 @@
                             <br>
                             <p><?= $game['description'] ?></p>
                         </div>
+                        <br>
+                        <div>
+                            <img alt= "Image du jeu <?= $game['name'] ?>" height="300" src = <?= $game['images'] ?>></img>
+                        </div>
                         <footer>
                             <small>♥ <?php echo $post['like_number'] ?> </small>
                             
