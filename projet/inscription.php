@@ -1,3 +1,7 @@
+<?php
+    unset($_SESSION['connected_id']);
+    session_destroy();
+?>
 <!doctype html>
 <html lang="fr">
     <head>
@@ -8,6 +12,7 @@
     </head>
     <body>
         <?php 
+            include "db.php";
             include "header.php"
         ?>
 

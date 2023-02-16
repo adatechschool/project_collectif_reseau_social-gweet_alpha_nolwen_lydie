@@ -8,6 +8,7 @@
     </head>
     <body>
         <?php
+        include 'db.php';
         include 'header.php';
         ?>
         <div id="wrapper">
@@ -46,7 +47,6 @@
                         auxquel est abonnée l'utilisatrice <?= $user['alias'] ?>
                         (id : <?php echo $userId ?>)
                     </p>
-
                 </section>
             </aside>
             <main>
@@ -107,3 +107,4 @@
         </div>
     </body>
 </html>
+

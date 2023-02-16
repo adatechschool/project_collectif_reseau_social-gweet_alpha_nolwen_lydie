@@ -8,7 +8,8 @@
     </head>
     <body>
         <?php
-        include 'header.php';
+            include "db.php";
+            include 'header.php';
         ?>
 
         <?php
@@ -77,7 +78,6 @@
                  */
                 while ($tag = $lesInformations->fetch_assoc())
                 {
-                   // echo "<pre>" . print_r($tag, 1) . "</pre>";
                     ?>
                     <article>
                         <h3><?= $tag["alias"] ?></h3>
