@@ -1,4 +1,3 @@
-<?php session_start() ?>
 <!doctype html>
 <html lang="fr">
     <head>
@@ -9,8 +8,8 @@
     </head>
     <body>
         <?php
-            include 'header.php';
             include "db.php";
+            include 'header.php';
         ?>
 
         <?php

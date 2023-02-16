@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     if(isset($_SESSION['connected_id'])) {
         header("Location: news.php");
     }
@@ -41,8 +42,7 @@
                         $lInstructionSql = "SELECT * "
                                 . "FROM users "
                                 . "WHERE "
-                                . "email LIKE '" . $emailAVerifier . "'"
-                                ;
+                                . "email LIKE '" . $emailAVerifier . "'";
                         // Etape 6: Vérification de l'utilisateur
                         $res = $mysqli->query($lInstructionSql);
                         $user = $res->fetch_assoc();
