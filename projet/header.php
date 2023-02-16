@@ -1,10 +1,11 @@
 <header>
-        <a href='admin.php'><img src="resoc.jpg" alt="Logo de notre réseau social"/></a>
+        <a href='admin.php'><img src="newLogo.png" alt="Logo de notre réseau social"/></a>
         <nav id="menu">
                 <a href="news.php">Actualités</a>
                 <a href="wall.php?user_id=5">Mur</a>
                 <a href="feed.php?user_id=5">Flux</a>
                 <a href="tags.php?tag_id=1">Mots-clés</a>
+                <a href="discover.php">Découvrir</a>
         </nav>
         <nav id="user">
                 <a href="#">▾ Profil</a>
@@ -17,5 +18,5 @@
 </header>
 
 <?php
-    $mysqli = new mysqli("localhost", "root", "root", "socialnetwork");
+    $mysqli = new mysqli("localhost:8889", "root", "root", "socialnetwork");
 ?>

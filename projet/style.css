@@ -1,5 +1,7 @@
+/* #C67AFF */
+
 body{
-    background-color: #003;
+    background-color: rgb(233, 233, 255);
     font-family: Arial;
 }
 
@@ -12,6 +14,7 @@ body>header{
     width:80em;
     margin:0 auto 2em auto;    
     padding:0;
+    border-radius: 1em ;
 
 }
 body>header img{
@@ -31,7 +34,7 @@ body>header #menu a{
 }
 body>header a:hover
 {
-    background-color: #99b;
+    background-color: rgb(191, 160, 215);
 }
 body>header ul{list-style: none;}
 body>header #user
