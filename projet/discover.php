@@ -14,9 +14,8 @@
             <aside>
                 <img src="user.jpg" alt="Portrait de l'utilisatrice"/>
                 <section>
-                    <h3>Présentation</h3>
-                    <p>Sur cette page vous trouverez les derniers messages de
-                        tous les utilisatrices du site.</p>
+                    <h3>Bienvenue !</h3>
+                    <p>Ajoute à ta ludothèque les différents jeux présents sur cette page. </p>
                 </section>
             </aside>
             <main>
@@ -72,19 +71,19 @@
                     // avec le ? > ci-dessous on sort du mode php et on écrit du html comme on veut... mais en restant dans la boucle
                     ?>
                     <article>
-                        <h1>
-                        <?= $game['name'] ?>
-                        </h1>
-                        <div>
-                            <small>Créateur•ice : <?= $game['creator'] ?></small>
-                            <p><strong>Age minimum : <?= $game['min_age'] ?> ans • Nombre de joueur•euse•s : <?= $game['min_players'] ?> - <?= $game['max_players'] ?> • Durée d'une partie : <?= $game['duration'] ?> minutes </strong></p> 
+                        <section id='articleJeux'>
+                            <div>
+                                <h1><?= $game['name'] ?></h1>
+                                <small>Créateur•ice : <?= $game['creator'] ?></small>
+                                <p><strong>Age minimum : <?= $game['min_age'] ?> ans • Nombre de joueur•euse•s : <?= $game['min_players'] ?> - <?= $game['max_players'] ?> • Durée d'une partie : <?= $game['duration'] ?> minutes </strong></p> 
+                                <br>
+                                <p><?= $game['description'] ?></p>
+                            </div>
                             <br>
-                            <p><?= $game['description'] ?></p>
-                        </div>
-                        <br>
-                        <div>
-                            <img alt= "Image du jeu <?= $game['name'] ?>" height="300" src = <?= $game['images'] ?>></img>
-                        </div>
+                            <div>
+                                <img alt= "Image du jeu <?= $game['name'] ?>" height="300" src = <?= $game['images'] ?>></img>
+                            </div>
+                        </section>
                         <footer>
                             <small>♥ <?php echo $post['like_number'] ?> </small>
                             
