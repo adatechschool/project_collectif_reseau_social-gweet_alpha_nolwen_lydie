@@ -12,10 +12,16 @@
         include 'header.php';
         ?>
         <div id="wrapper">
+            <?php 
+                $userId = intval($_GET['user_id']);
+                $infoUserSQL = "SELECT * FROM users WHERE users.id = $userId";
+                $infoUser = $mysqli->query($infoUserSQL);
+                $infoUser = $infoUser->fetch_assoc();
+            ?>
             <aside>
                 <img src="user.jpg" alt="Portrait de l'utilisatrice"/>
                 <section>
-                    <h3>Présentation</h3>
+                    <h3><?= $infoUser['alias'] ?></h3>
                     <p>Sur cette page vous trouverez la liste des personnes dont
                         l'utilisatrice
                         n° <?= intval($_GET['user_id']) ?>
@@ -26,10 +32,6 @@
             </aside>
             <main class='contacts'>
                 <?php
-                // Etape 1: récupérer l'id de l'utilisateur
-                $userId = intval($_GET['user_id']);
-                // Etape 2: se connecter à la base de donnée
-                // Etape 3: récupérer le nom de l'utilisateur
                 $laQuestionEnSql = "
                     SELECT users.* 
                     FROM followers 
@@ -39,7 +41,6 @@
                     ";
                 $lesInformations = $mysqli->query($laQuestionEnSql);
                 // Etape 4: à vous de jouer
-                //@todo: faire la boucle while de parcours des abonnés et mettre les bonnes valeurs ci dessous 
                 while($user = $lesInformations->fetch_assoc()) {
                 ?>
                 <article>
