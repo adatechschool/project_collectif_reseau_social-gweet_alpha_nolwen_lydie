@@ -1,4 +1,3 @@
-<?php session_start() ?>
 <!doctype html>
 <html lang="fr">
     <head>
@@ -87,8 +86,7 @@
                             </div>
                         </section>
                         <footer>
-                            <small>♥ <?php echo $post['like_number'] ?> </small>
-                            
+                            <small>♥</small>
                                 <p>Type: <i><?= $game['type'] ?></i></p>
                             
                         </footer>
