@@ -163,3 +163,21 @@ pre{
     align-content:center;
     justify-content: space-evenly;
 }
+
+#wrapperResearch{
+display: flex;
+flex-direction: column;
+align-content:center;
+padding: 100px;
+}
+
+.articleResearch{
+    display: flex;
+    align-content:center;
+    justify-content: space-evenly;
+    background-color : white ; 
+}
+
+.footer{
+    background-color : white ; 
+}
