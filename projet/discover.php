@@ -87,7 +87,6 @@
                         </section>
                         <footer>
                             <small>♥</small>
-                            
                                 <p>Type: <i><?= $game['type'] ?></i></p>
                             
                         </footer>
