@@ -1,16 +1,7 @@
-<!doctype html>
-<html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <title>ReSoC - Actualités</title> 
-        <meta name="author" content="Julien Falconnet">
-        <link rel="stylesheet" href="style.css"/>
-    </head>
+<?php 
+    include 'header.php';
+?>   
     <body>
-        <?php
-        include 'db.php';
-        include 'header.php';
-        ?>
         <div id="wrapper">
             <aside>
                 <img src="userNotConnected.png" alt="Portrait de l'utilisatrice"/>
