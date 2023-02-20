@@ -3,9 +3,6 @@
         <a href='admin.php'><img src="newLogo.png" alt="Logo de notre réseau social"/></a>
         <nav id="menu">
                 <a href="news.php">Actualités</a>
-                <a href="wall.php?user_id=<?php echo $_SESSION['connected_id'] ?>">Mur</a>
-                <a href="feed.php?user_id=<?php echo $_SESSION['connected_id'] ?>">Flux</a>
-                <a href="tags.php?tag_id=<?php echo $_SESSION['connected_id'] ?>">Mots-clés</a>
                 <a href="discover.php">Découvrir</a>
         </nav>
         <nav id="user">

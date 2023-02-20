@@ -21,7 +21,7 @@
 
             <aside>
                 <h2>Présentation</h2>
-                <p>Bienvenu sur notre réseau social Gweet</p>
+                <p>Bienvenue sur notre réseau social Gweet</p>
             </aside>
             <main>
                 <article>
