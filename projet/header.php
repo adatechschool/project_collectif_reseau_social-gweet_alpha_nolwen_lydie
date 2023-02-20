@@ -8,6 +8,9 @@
                         <meta charset="utf-8">
                         <title>Gweet</title> 
                         <link rel="stylesheet" href="style.css"/>
+                        <link rel="icon" type="image/png" sizes="16x16"  href="/favicons/favicon-16x16.png">
+                        <meta name="msapplication-TileColor" content="#ffffff">
+                        <meta name="theme-color" content="#ffffff">
                 </head>
         <header>
                 <a href='admin.php'><img src="newLogo.png" alt="Logo de notre réseau social"/></a>
