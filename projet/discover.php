@@ -8,12 +8,12 @@
     </head>
     <body>
         <?php
+        include 'db.php';
         include 'header.php';
-        include 'db.php'
         ?>
         <div id="wrapper">
             <aside>
-                <img src="user.jpg" alt="Portrait de l'utilisatrice"/>
+                <img src="userNotConnected.png" alt="Portrait de l'utilisatrice"/>
                 <section>
                     <h3>Bienvenue !</h3>
                     <p>Ajoute à ta ludothèque les différents jeux présents sur cette page. </p>
