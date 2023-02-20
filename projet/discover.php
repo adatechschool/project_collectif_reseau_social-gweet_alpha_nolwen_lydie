@@ -1,4 +1,3 @@
-<?php session_start() ?>
 <!doctype html>
 <html lang="fr">
     <head>
@@ -9,12 +8,12 @@
     </head>
     <body>
         <?php
+        include 'db.php';
         include 'header.php';
-        include 'db.php'
         ?>
         <div id="wrapper">
             <aside>
-                <img src="user.jpg" alt="Portrait de l'utilisatrice"/>
+                <img src="userNotConnected.png" alt="Portrait de l'utilisatrice"/>
                 <section>
                     <h3>Bienvenue !</h3>
                     <p>Ajoute à ta ludothèque les différents jeux présents sur cette page. </p>
@@ -87,7 +86,7 @@
                             </div>
                         </section>
                         <footer>
-                            <small>♥ <?php echo $post['like_number'] ?> </small>
+                            <small>♥</small>
                             
                                 <p>Type: <i><?= $game['type'] ?></i></p>
                             
