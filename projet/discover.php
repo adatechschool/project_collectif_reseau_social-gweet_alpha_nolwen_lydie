@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!doctype html>
 <html lang="fr">
     <head>
@@ -9,6 +10,7 @@
     <body>
         <?php
         include 'header.php';
+        include 'db.php'
         ?>
         <div id="wrapper">
             <aside>
