@@ -1,17 +1,49 @@
 <?php 
     include 'header.php';
 ?>   
-    <body>
+    <body>                   
         <div id="wrapper">
             <aside>
-                <img src="userNotConnected.png" alt="Portrait de l'utilisatrice"/>
-                <section>
-                    <h3>Présentation</h3>
+                <section class= 'sectionActualités'>
+                    <h3>Actualités</h3>
                     <p>Sur cette page vous trouverez les derniers messages de
-                        tous les utilisatrices du site.</p>
+                        tous les utilisatrices du site.</p>         
                 </section>
             </aside>
             <main>
+            <article>
+                    <h2>Poster un article</h2>
+                    <?php
+                    if (!empty($_POST['message']))
+                    {
+                        $authorId = $_SESSION['connected_id'];
+                        $postContent = $_POST['message'];
+                        $authorId = intval($mysqli->real_escape_string($authorId));
+                        $postContent = $mysqli->real_escape_string($postContent);
+                        $lInstructionSql = "INSERT INTO posts "
+                                . "(id, user_id, content, created) "
+                                . "VALUES (NULL, "
+                                . $authorId . ", "
+                                . "'" . $postContent . "', "
+                                . "NOW());"
+                                ;
+                        $ok = $mysqli->query($lInstructionSql);
+                        if ( ! $ok)
+                        {
+                            echo "Impossible d'ajouter le message: " . $mysqli->error;
+                        } else
+                        {
+                            echo "Message posté en tant que :" . $listAuteurs[$authorId];
+                        }
+                    }
+                    ?>                     
+                    <form class='formArticle' action="news.php" method="post">
+                        <dl>
+                            <dd><textarea name='message'></textarea></dd>
+                        </dl>
+                        <input type='submit'>
+                    </form>               
+                </article>
                 <?php
                 /*
                   // C'est ici que le travail PHP commence
