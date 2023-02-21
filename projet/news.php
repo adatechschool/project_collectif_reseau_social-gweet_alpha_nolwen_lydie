@@ -20,7 +20,13 @@
                         $postContent = $_POST['message'];
                         $authorId = intval($mysqli->real_escape_string($authorId));
                         $postContent = $mysqli->real_escape_string($postContent);
-                        $lInstructionSql = "INSERT INTO posts "
+                        $check=mysqli_query($mysqli,"select * from posts where content='$postContent'");
+                        $checkrows=mysqli_num_rows($check);
+                    
+                       if($checkrows>0) {
+                          echo "Déjà posté !";
+                       } else {  
+                        $lInstructionSql = "INSERT IGNORE INTO posts "
                                 . "(id, user_id, content, created) "
                                 . "VALUES (NULL, "
                                 . $authorId . ", "
@@ -28,7 +34,7 @@
                                 . "NOW());"
                                 ;
                         $ok = $mysqli->query($lInstructionSql);
-                        if ( ! $ok)
+                        if ( ! $ok )
                         {
                             echo "Impossible d'ajouter le message: " . $mysqli->error;
                         } else
@@ -36,6 +42,7 @@
                             echo "Message posté !";
                         }
                     }
+                }
                     ?>                     
                     <form class='formArticle' action="news.php" method="post">
                         <dl>
