@@ -63,7 +63,11 @@
                 </div>
             </section>
             <footer>
-                <small>♥</small>
+                <form action="addToLudotheque.php" method="POST">
+<!--                     <input type ='text' name ="search" placeholder="Search"/> -->
+                    <button type="submit" name="submit-like" value=<?=$game['id']?> >♥</button>
+                </form>
+                
                     <p>Type: <i><?= $game['type'] ?></i></p>
             </footer>
         </article>
