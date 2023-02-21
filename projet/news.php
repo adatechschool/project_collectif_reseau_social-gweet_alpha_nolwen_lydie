@@ -33,7 +33,7 @@
                             echo "Impossible d'ajouter le message: " . $mysqli->error;
                         } else
                         {
-                            echo "Message posté en tant que :" . $listAuteurs[$authorId];
+                            echo "Message posté !";
                         }
                     }
                     ?>                     
@@ -103,26 +103,30 @@
 
                     // @todo : Votre mission c'est de remplacer les AREMPLACER par les bonnes valeurs
                     // ci-dessous par les bonnes valeurs cachées dans la variable $post 
-                    // on vous met le pied à l'étrier avec created
+                    // on vous met le pied à l'étrier avec created 
                     // 
                     // avec le ? > ci-dessous on sort du mode php et on écrit du html comme on veut... mais en restant dans la boucle
                     ?>
                     <article>
                         <h3>
-                            <time><?php echo $post['created'] ?></time>
+                            <time><i><?php echo $post['created'] ?></i></time>
                         </h3>
-                        <address><?php echo $post['content'] ?></address>
+                        <br>
                         <div>
-                            <p><?php echo $post['author_name'] ?></p>
+                        <p><?php echo $post['content'] ?></p>
+                        </div>
+                        <div>
+                            <p> <i>De : <?php echo $post['author_name'] ?></i></p>
                         </div>
                         <footer>
-                            <small>♥ <?php echo $post['like_number'] ?> </small>
-                            <?php 
-                                $word = explode(",", $post['taglist']);
+                            <!-- ajouter balise php si on veut réafficher -->
+                            <!-- <small>♥  echo $post['like_number']  </small> --> 
+                              <!-- ajouter balise php si on veut réafficher : -->
+                             <!--    $word = explode(",", $post['taglist']);
                                 for($i = 0; $i < sizeof($word); $i++) {
-                                   echo "<a href=''> #".$word[$i] ."</a>";
-                                }
-                            ?>
+                                  echo "<a href=''> #".$word[$i] ."</a>";
+                               } -->
+                            
                         </footer>
                     </article>
                     <?php

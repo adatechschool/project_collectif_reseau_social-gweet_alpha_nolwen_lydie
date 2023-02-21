@@ -9,10 +9,6 @@
                     <h3>Bienvenue !</h3>
                     <p>Ajoute à ta ludothèque les différents jeux présents sur cette page. </p>
                 </section>
-                <form action="searchbar.php" method="POST">
-                    <input type ='text' name ="search" placeholder="Search"/>
-                    <button type="submit" name="submit-search">Search</button>
-                </form>
             </aside>
             <main>
     <?php
