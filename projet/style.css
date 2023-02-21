@@ -181,3 +181,12 @@ padding: 100px;
 .footer{
     background-color : white ; 
 }
+
+.sectionActualités{
+    display: flex;
+    flex-direction: column;
+}
+
+/* form dl dt{font-weight: bold;line-height: 1.5em;}
+form dl dd{line-height: 1.5em;margin-bottom: 1em} */
+form dl dd textarea{width:40em;height: 15em;}
