@@ -1,20 +1,10 @@
-<?php session_start() ?>
-<!doctype html>
-<html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <title>ReSoC - Mes abonnés </title> 
-        <meta name="author" content="Julien Falconnet">
-        <link rel="stylesheet" href="style.css"/>
-    </head>
+<?php 
+    include 'header.php';
+?> 
     <body>
-        <?php
-        include 'db.php';
-        include 'header.php';
-        ?>
         <div id="wrapper">          
             <aside>
-                <img src = "user.jpg" alt = "Portrait de l'utilisatrice"/>
+                <img src ="userNotConnected.png"  alt = "Portrait de l'utilisatrice"/>
                 <section>
                     <h3>Présentation</h3>
                     <p>Sur cette page vous trouverez la liste des personnes qui
@@ -41,7 +31,7 @@
                 while($user = $lesInformations->fetch_assoc()) {
                     ?>
                     <article>
-                        <img src="user.jpg" alt="blason"/>
+                        <img src ="userNotConnected.png" alt="blason"/>
                         <h3><?= $user['alias'] ?></h3>
                         <p> id : <?= $user['id'] ?></p>                    
                     </article>
