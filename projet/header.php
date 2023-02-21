@@ -17,6 +17,10 @@
                 <nav id="menu">
                         <a href="news.php">Actualités</a>
                         <a href="discover.php">Découvrir</a>
+                        <form id="searchform" action="searchbar.php" method="POST">
+                                <input size=40 type ='text' name ="search" placeholder="Search user, article or game"/>
+                                <button type="submit" name="submit-search">Search</button>
+                        </form>
                 </nav>
                 <nav id="user">
                         <a href="#">▾ Profil</a>
