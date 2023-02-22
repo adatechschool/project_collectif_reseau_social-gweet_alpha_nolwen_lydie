@@ -64,9 +64,70 @@
                 }
                 ?> 
             </aside>
-            <main class='contacts'>
-                <article></article>
+
+            <main>
+            <?php
+    // Etape 1: Ouvrir une connexion avec la base de donnée.
+    if ($mysqli->connect_errno)
+    {
+        echo "<article>";
+        echo("Échec de la connexion : " . $mysqli->connect_error);
+        echo("<p>Indice: Vérifiez les parametres de <code>new mysqli(...</code></p>");
+        echo "</article>";
+        exit();
+    }
+
+    // Etape 2: Poser une question à la base de donnée et récupérer ses informations
+    $idUser = $_SESSION['connected_id'];
+    $laQuestionEnSql = "
+        SELECT * FROM users_boardgames 
+        INNER JOIN boardgames ON users_boardgames.id_boardgame = boardgames.id
+        WHERE id_user = '$idUser';
+        ";
+   
+    $lesInformations = $mysqli->query($laQuestionEnSql);
+    // Vérification
+    if ( ! $lesInformations)
+    {
+        echo "<article>";
+        echo("Échec de la requete : " . $mysqli->error);
+        echo("<p>Indice: Vérifiez la requete  SQL suivante dans phpmyadmin<code>$laQuestionEnSql</code></p>");
+        exit();
+    }
+    // Etape 3: Parcourir ces données et les ranger bien comme il faut dans du html
+    // NB: à chaque tour du while, la variable post ci dessous reçois les informations du post suivant.
+        ?> 
+    <?php    
+    while ($game = $lesInformations->fetch_assoc())
+    {
+        ?>
+        <article>
+            <section id='articleJeux'>
+                <div>
+                    <h1><?= $game['name'] ?></h1>
+                    <small>Créateur•ice : <?= $game['creator'] ?></small>
+                    <p><strong>Age minimum : <?= $game['min_age'] ?> ans • Nombre de joueur•euse•s : <?= $game['min_players'] ?> - <?= $game['max_players'] ?> • Durée d'une partie : <?= $game['duration'] ?> minutes </strong></p> 
+                    <br>
+                    <p><?= $game['description'] ?></p>
+                </div>
+                <br>
+                <div>
+                    <img alt= "Image du jeu <?= $game['name'] ?>" height="300" src = <?= $game['images'] ?>></img>
+                </div>
+            </section>
+            <footer>
+                <form action="addToLudotheque.php" method="POST">
+                    <button type="submit" name="submit-like" value=<?=$game['id']?> >♥</button>
+                </form>
+                
+                    <p>Type: <i><?= $game['type'] ?></i></p>
+            </footer>
+        </article>
+        <?php
+    }
+    ?>
             </main>
+
         </div>
     </body>
 </html>
