@@ -6,13 +6,10 @@
             <aside>
                 <section class= 'sectionActualités'>
                     <h3>Actualités</h3>
-                    <p>Sur cette page vous trouverez les derniers messages de
-                        tous les utilisatrices du site.</p>         
-                </section>
-            </aside>
-            <main>
-            <article>
-                    <h2>Poster un article</h2>
+                    <p>Sur cette page vous trouverez les derniers articles de
+                        tous les utilisateur•rices du site.</p>  
+                        <div>
+                    <h2>Poster un article : </h2>
                     <?php
                     if (!empty($_POST['message']))
                     {
@@ -44,13 +41,16 @@
                     }
                 }
                     ?>                     
-                    <form class='formArticle' action="news.php" method="post">
-                        <dl>
-                            <dd><textarea name='message'></textarea></dd>
-                        </dl>
-                        <input type='submit'>
+                    <form id="formArticle" action="news.php" method="post">
+                        
+                            <textarea name='message'></textarea>
+                    
+                    <input type='submit'>
                     </form>               
-                </article>
+            </div>       
+                </section>
+            </aside>
+            <main>
                 <?php
                     if (!empty($_POST['liked']))
                     {

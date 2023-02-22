@@ -80,7 +80,8 @@ body>header #user:hover ul{
     background-color: #fff;
     flex:1;
     padding:1em;
-    border-radius: 1em;    
+    border-radius: 1em;  
+    max-width: 300px;  
 }
 #wrapper aside img{
     display: block;
@@ -164,12 +165,12 @@ pre{
     justify-content: space-evenly;
 }
 
-#wrapperResearch{
+/* #wrapperResearch{
 display: flex;
 flex-direction: column;
 align-content:center;
 padding: 100px;
-}
+} */
 
 .articleResearch{
     display: flex;
@@ -189,7 +190,7 @@ padding: 100px;
 
 /* form dl dt{font-weight: bold;line-height: 1.5em;}
 form dl dd{line-height: 1.5em;margin-bottom: 1em} */
-form dl dd textarea{width:40em;height: 15em;}
+form textarea{width:inherit;height: 15em;}
 
 #searchform {
     align-self: center;
@@ -198,4 +199,9 @@ form dl dd textarea{width:40em;height: 15em;}
 
 #pseudoWal{
     align-self: center;
+}
+
+#formArticle{
+display: flex;
+flex-direction: column;
 }
