@@ -1,16 +1,7 @@
-<!doctype html>
-<html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <title>Gweet - Mon Profil</title> 
-        <meta name="author" content="Julien Falconnet">
-        <link rel="stylesheet" href="style.css"/>
-    </head>
+<?php 
+    include 'header.php';
+?>  
     <body>
-        <?php
-        include "db.php";
-        include 'header.php';
-        ?>
         <div id="wrapper">
             <?php 
                 $userId = intval($_GET['user_id']);
