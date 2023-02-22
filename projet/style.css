@@ -122,8 +122,12 @@ body>header #user:hover ul{
     margin-top: 1em;
     text-align: right;
 }
-#wrapper main article footer small{
+/* #wrapper main article footer small{
     float:left;
+} */
+
+#footerTheme{
+    text-align: left; 
 }
 
 #wrapper.admin{flex-direction: row-reverse}
@@ -204,4 +208,11 @@ form textarea{width:inherit;height: 15em;}
 #formArticle{
 display: flex;
 flex-direction: column;
+}
+
+footer button {
+    color: #C67AFF;
+    padding: 1%;
+    border: none;
+    border-radius: 10%;
 }

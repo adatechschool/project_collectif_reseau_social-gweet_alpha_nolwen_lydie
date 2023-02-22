@@ -1,1 +1,4 @@
-
+- ajout de lien vers les jeux si anoncé dans les articles
+- ajout d'un formulaire pour ajouter des jeux dans la BDD
+- enlever sider dans les jeux et faire une flex box avec trois colonnes
+- 

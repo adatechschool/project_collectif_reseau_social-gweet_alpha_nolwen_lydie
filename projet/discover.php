@@ -4,10 +4,9 @@
     <body>   
         <div id="wrapper">
             <aside>
-                <img src="userNotConnected.png" alt="Portrait de l'utilisatrice"/>
-                <section>
-                    <h3>Bienvenue !</h3>
-                    <p>Ajoute à ta ludothèque les différents jeux présents sur cette page. </p>
+                <section class= 'sectionActualités'>
+                    <h3>Découvrir</h3>
+                    <p>Ajoutez à votre ludothèque les différents jeux présents sur cette page. </p>
                 </section>
             </aside>
             <main>
@@ -59,11 +58,10 @@
                 </div>
             </section>
             <footer>
+                <p id='footerTheme'>Type: <i><?= $game['type'] ?></i></p>
                 <form action="addToLudotheque.php" method="POST">
                     <button type="submit" name="submit-like" value=<?=$game['id']?> >♥</button>
-                </form>
-                
-                    <p>Type: <i><?= $game['type'] ?></i></p>
+                </form>             
             </footer>
         </article>
         <?php
