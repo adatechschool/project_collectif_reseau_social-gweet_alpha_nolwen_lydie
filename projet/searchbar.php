@@ -12,27 +12,31 @@
 
                 if ($queryResult > 0){
                     echo "Resultats de votre recherche :" ;
-                   while ($row = mysqli_fetch_assoc($result)){ 
-                    echo 
-                        "<article>
+                   while ($row = mysqli_fetch_assoc($result))
+                   { 
+                    ?>
+                        <article>
                         <section id='articleJeux'>
                             <div>
-                                <h1>".$row['name']."</h1>
-                                <small>Créateur•ice : ".$row['creator']."</small>
-                                <p><strong>Age minimum : ".$row['min_age']."ans • Nombre de joueur•euse•s : ".$row['min_players']." - ".$row['max_players']." • Durée d'une partie : ".$row['duration']."minutes </strong></p> 
+                                <h1><?=$row['name']?></h1>
+                                <small>Créateur•ice : <?=$row['creator']?></small>
+                                <p><strong>Age minimum : <?=$row['min_age']?>ans • Nombre de joueur•euse•s : <?=$row['min_players']?> - <?=$row['max_players']?> • Durée d'une partie : <?=$row['duration']?>minutes </strong></p> 
                                 <br>
-                                <p>".$row['description']."</p>
+                                <p><?=$row['description']?></p>
                             </div>
                             <br>
                             <div>
-                                <img alt= Image du jeu".$row['name']." height='300' src = ".$row['images']."</img>
+                                <img alt='Image du jeu<?=$row['name']?>' height='300' src = <?=$row['images']?>></img>
                             </div>
                         </section>
                         <footer>
-                            <small>♥</small>
-                                <p>Type: <i>".$row['type']."</i></p>
+                            <form action="addToLudotheque.php" method="POST">
+                                 <button type="submit" name="submit-like" value=<?=$row['id']?> >♥</button>
+                            </form>
+                            <p>Type: <i><?=$row['type']?></i></p>  
                         </footer>
-                    </article>" ;
+                    </article>
+                    <?php
                    }
                 }else {
                     echo "Pas de résultat pour votre recherche !";
