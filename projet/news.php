@@ -146,7 +146,7 @@
                         <p><?php echo $post['content'] ?></p>
                         </div>
                         <div>
-                            <p> <i>De : <?php echo $post['author_name'] ?></i></p>
+                            <p> <i>De : <a href="wall.php?user_id=<?= $row['id'] ?>"><?php echo $post['author_name'] ?></a></i></p>
                         </div>
                         <footer>
                             <form action="news.php" method="POST"> 

@@ -56,14 +56,15 @@
                     ORDER BY posts.created DESC  
                     ";
                 $lesInformations = $mysqli->query($laQuestionEnSql);
+                $queryResult =mysqli_num_rows($lesInformations);
                 if ( ! $lesInformations)
                 {
                     echo("Échec de la requete : " . $mysqli->error);
                 }
-
                 /**
                  * Etape 4: @todo Parcourir les messages et remplir correctement le HTML avec les bonnes valeurs php
                  */
+                if ($queryResult >0){
                 while ($post = $lesInformations->fetch_assoc())
                 {
                     ?>                
@@ -86,7 +87,12 @@
                             ?>
                         </footer>
                     </article>
-                <?php } ?>
+                <?php }}else {
+                            ?>
+                            <p> L'utilisatrice n'a pas encore publié d'article !</p>
+                            <?php 
+                            }
+                            ?> 
             </section>
             <section id = 'ludothequeWall'>
                 <h2> Ludothèque </h2>

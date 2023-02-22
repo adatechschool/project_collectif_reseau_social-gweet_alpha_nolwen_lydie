@@ -15,37 +15,9 @@
             exit();
         }
         ?>
-        <div id="wrapper" class='admin'>
+        <div id="wrapper" >
             <aside>
-                <h2>Mots-clés</h2>
-                <?php
-                /*
-                 * Etape 2 : trouver tous les mots clés
-                 */
-                $laQuestionEnSql = "SELECT * FROM `tags` LIMIT 50";
-                $lesInformations = $mysqli->query($laQuestionEnSql);
-                // Vérification
-                if ( ! $lesInformations)
-                {
-                    echo("Échec de la requete : " . $mysqli->error);
-                    exit();
-                }
-
-                /*
-                 * Etape 3 : @todo : Afficher les mots clés en s'inspirant de ce qui a été fait dans news.php
-                 * Attention à en pas oublier de modifier tag_id=321 avec l'id du mot dans le lien
-                 */
-                while ($tag = $lesInformations->fetch_assoc())
-                {
-                    ?>
-                    <article>
-                        <h3><?php echo $tag['label'] ?></h3>
-                        <p><?php echo "<p> id:".$tag['id']."</p>"  ?></p>
-                        <nav>
-                            <a href="tags.php?tag_id=<? $tag['id'] ?>">Messages</a> 
-                        </nav>
-                    </article>
-                <?php } ?>
+                <h2>Espace de gestion de comptes pour administrateur.ice</h2>
             </aside>
             <main>
                 <h2>Utilisatrices</h2>
