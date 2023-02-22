@@ -141,7 +141,6 @@
                         <h3>
                             <time><i><?php echo $post['created'] ?></i></time>
                         </h3>
-                        <p> <i> id post : <?php echo $post['id'] ?></i></p>
                         <br>
                         <div>
                         <p><?php echo $post['content'] ?></p>
