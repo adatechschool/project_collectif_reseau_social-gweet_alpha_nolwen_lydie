@@ -52,6 +52,28 @@
                     </form>               
                 </article>
                 <?php
+                    if (!empty($_POST['liked']))
+                    {
+                        $userId = $_SESSION['connected_id'];
+                        $articleLikedId= intval($_POST['liked']);
+                        $userId = intval($mysqli->real_escape_string($userId));
+                        $articleLikedId = intval($mysqli->real_escape_string($articleLikedId));
+                        $lInstructionSql = "INSERT INTO likes "
+                                                . "(user_id,post_id) "
+                                                . "VALUES ("
+                                                . $userId . ", "
+                                                . $articleLikedId .");" ;
+                            $ok = $mysqli->query($lInstructionSql);
+/*                             if ( ! $ok)
+                            {
+                                echo "Impossible de liker cet article :  " . $mysqli->error;
+                            } else
+                            {
+                                echo "liké !";
+                            } */
+                    }
+                ?>  
+                <?php
                 /*
                   // C'est ici que le travail PHP commence
                   // Votre mission si vous l'acceptez est de chercher dans la base
@@ -77,6 +99,7 @@
                 // si vous ne la comprenez pas c'est normal, passez, on y reviendra
                 $laQuestionEnSql = "
                     SELECT posts.content,
+                    posts.id,
                     posts.created,
                     users.alias as author_name,  
                     count(likes.id) as like_number,  
@@ -118,6 +141,7 @@
                         <h3>
                             <time><i><?php echo $post['created'] ?></i></time>
                         </h3>
+                        <p> <i> id post : <?php echo $post['id'] ?></i></p>
                         <br>
                         <div>
                         <p><?php echo $post['content'] ?></p>
@@ -126,15 +150,15 @@
                             <p> <i>De : <?php echo $post['author_name'] ?></i></p>
                         </div>
                         <footer>
-                            <!-- ajouter balise php si on veut réafficher -->
-                            <!-- <small>♥  echo $post['like_number']  </small> --> 
-                              <!-- ajouter balise php si on veut réafficher : -->
+                            <form action="news.php" method="POST"> 
+                                <button type="submit" name="liked" value=<?=$post['id']?>>♥</button>
+                                <label><?=$post['like_number']?></label>
+                            </form>
                              <!--    $word = explode(",", $post['taglist']);
                                 for($i = 0; $i < sizeof($word); $i++) {
                                   echo "<a href=''> #".$word[$i] ."</a>";
                                } -->
-                            
-                        </footer>
+                        </footer>    
                     </article>
                     <?php
                     // avec le <?php ci-dessus on retourne en mode php 
