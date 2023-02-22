@@ -53,7 +53,7 @@
                         } else
                         {
                             $_SESSION['connected_id'] = $user['id'];
-                            header("Location: admin.php");
+                            header("Location: discover.php");
                         }
                     }
                     ?>                     

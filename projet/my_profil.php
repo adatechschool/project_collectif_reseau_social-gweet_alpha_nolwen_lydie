@@ -10,7 +10,7 @@
                 $infoUser = $infoUser->fetch_assoc();
             ?>
             <aside>
-                <img src="user.jpg" alt="Portrait de l'utilisatrice"/>
+                <img src="userNotConnected.png" alt="Portrait de l'utilisatrice"/>
                 <section>
                     <h3><?= $infoUser['alias'] ?></h3>
                     <p><?= $infoUser['email'] ?></p>
@@ -66,6 +66,7 @@
             </aside>
 
             <main>
+                <h1> Ma ludothèque </h1>
             <?php
     // Etape 1: Ouvrir une connexion avec la base de donnée.
     if ($mysqli->connect_errno)
