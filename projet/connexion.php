@@ -3,7 +3,8 @@
     if(isset($_SESSION['connected_id'])) {
         header("Location: news.php");
     }
-
+    
+    include 'db.php';
     $enCoursDeTraitement = isset($_POST['email']);
     if ($enCoursDeTraitement)
     {
@@ -44,9 +45,6 @@
         <link rel="stylesheet" href="style.css"/>
     </head>
     <body>
-        <?php 
-            include 'db.php';
-        ?>
         <div id="wrapper" >
             <aside>
                 <h2>Présentation</h2>
