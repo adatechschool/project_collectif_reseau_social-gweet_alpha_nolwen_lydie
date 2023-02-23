@@ -9,6 +9,7 @@
     <head>
         <meta charset="utf-8">
         <title>Gweet - Connexion</title> 
+        <meta name="author" content="Julien Falconnet">
         <link rel="stylesheet" href="style.css"/>
     </head>
     <body>
@@ -18,7 +19,7 @@
         <div id="wrapper" >
             <aside>
                 <h2>Présentation</h2>
-                <p>Bienvenue sur Gweet</p>
+                <p>Bienvenu sur Gweet</p>
             </aside>
             <main>
                 <article>
