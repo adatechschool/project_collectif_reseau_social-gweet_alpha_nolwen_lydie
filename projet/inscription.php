@@ -2,7 +2,7 @@
     session_start();
     if(isset($_SESSION['connected_id'])) {
         header("Location: news.php");
-    }
+    }  
 ?>
 <!doctype html>
 <html lang="fr">
@@ -12,12 +12,10 @@
         <link rel="stylesheet" href="style.css"/>
     </head>
     <body>
-        <?php 
-            include "db.php";
-        ?>
-
+    <?php
+    include "db.php";
+    ?>
         <div id="wrapper">
-
             <aside>
                 <h2>Présentation</h2>
                 <p>Bienvenue sur notre réseau social Gweet</p>

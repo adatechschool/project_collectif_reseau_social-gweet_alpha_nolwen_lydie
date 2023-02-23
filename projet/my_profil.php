@@ -87,6 +87,8 @@
         ";
    
     $lesInformations = $mysqli->query($laQuestionEnSql);
+    $queryResult =mysqli_num_rows($lesInformations);
+    
     // Vérification
     if ( ! $lesInformations)
     {
@@ -98,7 +100,8 @@
     // Etape 3: Parcourir ces données et les ranger bien comme il faut dans du html
     // NB: à chaque tour du while, la variable post ci dessous reçois les informations du post suivant.
         ?> 
-    <?php    
+    <?php  
+    if ($queryResult >0){
     while ($game = $lesInformations->fetch_assoc())
     {
         ?>
@@ -125,6 +128,10 @@
             </footer>
         </article>
         <?php
+    }}else {
+    ?>
+    <p> Vous n'avez pas encore de jeu dans votre ludothèque.</p>
+    <?php
     }
     ?>
             </main>

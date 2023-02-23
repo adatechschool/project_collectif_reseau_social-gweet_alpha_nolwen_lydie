@@ -15,8 +15,7 @@
                 $queryResultBoardgames =mysqli_num_rows($resultTabBoardgames);
 
                 $sqlTabUsers ="SELECT * FROM users 
-                WHERE alias LIKE '%$search%' 
-                OR email LIKE '%$search%'";
+                WHERE alias LIKE '%$search%'";
                 $resultTabUsers = mysqli_query($mysqli,$sqlTabUsers);
                 $queryResultUsers = mysqli_num_rows($resultTabUsers);
 
@@ -40,7 +39,7 @@
                         { 
                         ?>
                         <article>
-                            <h3><?= $row['alias'] ?></h3>                    
+                            <h3> <a href="wall.php?user_id=<?= $row['id'] ?>"><?= $row['alias'] ?></a></h3>                    
                         </article>
                         <?php
                         }}

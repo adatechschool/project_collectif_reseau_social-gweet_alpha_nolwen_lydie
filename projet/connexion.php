@@ -8,8 +8,7 @@
 <html lang="fr">
     <head>
         <meta charset="utf-8">
-        <title>ReSoC - Connexion</title> 
-        <meta name="author" content="Julien Falconnet">
+        <title>Gweet - Connexion</title> 
         <link rel="stylesheet" href="style.css"/>
     </head>
     <body>
@@ -19,7 +18,7 @@
         <div id="wrapper" >
             <aside>
                 <h2>Présentation</h2>
-                <p>Bienvenu sur Gweet</p>
+                <p>Bienvenue sur Gweet</p>
             </aside>
             <main>
                 <article>
