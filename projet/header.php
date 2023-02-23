@@ -16,7 +16,16 @@
                         <meta name="theme-color" content="#ffffff">
                 </head>
         <header>
-                <a href='admin.php'><img src="newLogo.png" alt="Logo de notre réseau social"/></a>
+                <?php
+                if(isset($_SESSION['admin'])) {
+                        ?>
+                        <a href='admin.php'><img src="newLogo.png" alt="Logo de notre réseau social"/></a>
+                <?php } else {
+                        ?> 
+                        <img src="newLogo.png" alt="Logo de notre réseau social"/>
+                        <?php
+                }
+                ?>
                 <nav id="menu">
                         <a href="news.php">Actualités</a>
                         <a href="discover.php">Découvrir</a>
