@@ -72,7 +72,7 @@
                         <h3>
                             <time><?= $post['created'] ?></time>
                         </h3>
-                        <address> par <?= $post['author_name'] ?></address>
+                        <address>De : <?= $post['author_name'] ?></address>
                         <div>
                             <p><?= $post['content'] ?></p>
                             
