@@ -43,16 +43,9 @@
                 {
                     ?>
                     <article>
-                        <h3><?= $tag["alias"] ?></h3>
-                        <p><?= "<p> id: ".$tag['id']."</p>"?></p><br>
+                        <h3> <a href="wall.php?user_id=<?= $tag['id'] ?>"><?= $tag["alias"] ?></a></h3>
+                        <p><?= "<p> id: ".$tag['id']."</p>"?></p>
                         <p><?= $tag['email'] ?></p>
-                        <nav>
-                            <a href="wall.php?user_id=<?= $tag['id'] ?>">Mur</a>
-                            | <a href="feed.php?user_id=<?= $tag['id'] ?>">Flux</a>
-                            | <a href="settings.php?user_id=<?= $tag['id'] ?>">Paramètres</a>
-                            | <a href="followers.php?user_id=<?= $tag['id'] ?>">Suiveurs</a>
-                            | <a href="subscriptions.php?user_id=<?= $tag['id'] ?>">Abonnements</a>
-                        </nav>
                     </article>
                 <?php } ?>
             </main>
