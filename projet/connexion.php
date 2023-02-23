@@ -1,25 +1,9 @@
-<!doctype html>
-<html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <title>Gweet - Connexion</title> 
-        <link rel="stylesheet" href="style.css"/>
-    </head>
-    <body>
-        <div id="wrapper" >
-            <aside>
-                <h2>Présentation</h2>
-                <p>Bienvenue sur Gweet</p>
-            </aside>
-            <main>
-                <article>
-                    <h2>Connexion</h2>  
-                        <?php 
+<?php 
                         session_start();
                         if(isset($_SESSION['connected_id'])) {
                             header("Location: news.php");
                         }
-                        
+
                         include 'db.php';
                         $enCoursDeTraitement = isset($_POST['email']);
                         if ($enCoursDeTraitement)
@@ -45,7 +29,7 @@
                             if (! $user OR $user["password"] != $passwdAVerifier)
                             {
                                 echo "La connexion a échouée. ";
-                                
+
                             } else
                             {
                                 if($emailAVerifier == "admin@admin.fr") {
@@ -56,6 +40,22 @@
                             }
                         }
                     ?>                   
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Gweet - Connexion</title> 
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+        <div id="wrapper" >
+            <aside>
+                <h2>Présentation</h2>
+                <p>Bienvenue sur Gweet</p>
+            </aside>
+            <main>
+                <article>
+                    <h2>Connexion</h2>                    
                     <form action="connexion.php" method="post">
                         <dl>
                             <dt><label for='email'>E-Mail</label></dt>

@@ -1,8 +1,7 @@
 <?php
-        include 'header.php';
-        if(!isset($_SESSION['admin'])) {
-            header("Location:news.php");
-        }
+
+    session_start();
+    include 'header.php';
 ?>
     </head>
     <body>
