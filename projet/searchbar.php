@@ -38,7 +38,8 @@
                         while ($row = mysqli_fetch_assoc($resultTabUsers))
                         { 
                         ?>
-                        <article>
+                        <article id='usersSearched'>
+                            <img width='100px' src="userNotConnected.png" alt="Portrait de l'utilisatrice"/>
                             <h3> <a href="wall.php?user_id=<?= $row['id'] ?>"><?= $row['alias'] ?></a></h3>                    
                         </article>
                         <?php
@@ -92,7 +93,10 @@
                                         <p> <i>De : <?= $row['author_name'] ?></i></p><!--  Faut aller chercher dans une autre table  -->
                                     </div>
                                     <footer>
-                                    <small>♥</small>
+                                    <form action="news.php" method="POST"> 
+                                        <button type="submit" name="liked" value=<?=$post['id']?>>♥</button>
+                                        <label><?=$post['like_number']?></label>
+                                     </form>
                                     </footer>
                                 </article>
                             <?php
