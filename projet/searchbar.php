@@ -19,11 +19,11 @@
                 $resultTabUsers = mysqli_query($mysqli,$sqlTabUsers);
                 $queryResultUsers = mysqli_num_rows($resultTabUsers);
 
-                $sqlTabPosts ="SELECT * FROM posts 
-                WHERE content LIKE '%$search%'";
+                $sqlTabPosts ="SELECT posts.content, posts.created, users.alias as author_name
+                FROM posts  JOIN users ON  users.id=posts.user_id
+                WHERE content LIKE '%$search%';";
                 $resultTabPosts = mysqli_query($mysqli,$sqlTabPosts);
                 $queryResultPosts = mysqli_num_rows($resultTabPosts);
-
 
                 $queryResultAll = $queryResultBoardgames + $queryResultUsers + $queryResultPosts;
 
@@ -81,22 +81,18 @@
                         while ($row = mysqli_fetch_assoc($resultTabPosts))
                         { 
                             ?> 
-                                <article>
-                                    <h3>
-                                        <time><i><?= $row['created'] ?></i></time>
-                                    </h3>
-                                    <br>
-                                    <div>
-                                        <p><?= $row['content'] ?></p>
-                                    </div>
-                                    <div>
-                                        <p> <i>De : <?= $row['author_name'] ?></i></p><!--  Faut aller chercher dans une autre table  -->
-                                    </div>
-                                    <footer>
+                            <article>
+                                <h3>
+                                    <time><i><?= $row['created'] ?></i></time>
+                                </h3>
+                                <address>De : <a href="wall.php?user_id=<?= $row['user_id']?>"><?= $row['author_name'] ?></a></p>
+                                <div>
+                                    <p><?= $row['content'] ?></p>
+                                </div>
+                                <footer>
                                     <form action="news.php" method="POST"> 
-                                        <button type="submit" name="liked" value=<?=$post['id']?>>♥</button>
-                                        <label><?=$post['like_number']?></label>
-                                     </form>
+                                        <button type="submit" name="liked" value=<?=$row['id']?>>♥</button>
+                                    </form>
                                     </footer>
                                 </article>
                             <?php
