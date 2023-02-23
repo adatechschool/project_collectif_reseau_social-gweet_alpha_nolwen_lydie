@@ -142,7 +142,7 @@
                         <h3>
                             <time><i><?= $post['created'] ?></i></time>
                         </h3>
-                        <address>De : <a href="wall.php?user_id=<?= $post['user_id'] ?>"><?= $post['author_name'] ?></a></p>
+                        <address>De : <a href="wall.php?user_id=<?= $post['user_id'] ?>"><?= $post['author_name'] ?></a></address>
                         <div>
                             <p><?= $post['content'] ?></p>
                         </div>

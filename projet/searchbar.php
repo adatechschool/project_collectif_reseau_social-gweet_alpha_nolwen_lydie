@@ -19,7 +19,7 @@
                 $resultTabUsers = mysqli_query($mysqli,$sqlTabUsers);
                 $queryResultUsers = mysqli_num_rows($resultTabUsers);
 
-                $sqlTabPosts ="SELECT posts.content, posts.created, users.alias as author_name
+                $sqlTabPosts ="SELECT posts.content, posts.created, posts.user_id, users.alias as author_name
                 FROM posts  JOIN users ON  users.id=posts.user_id
                 WHERE content LIKE '%$search%';";
                 $resultTabPosts = mysqli_query($mysqli,$sqlTabPosts);
@@ -85,7 +85,7 @@
                                 <h3>
                                     <time><i><?= $row['created'] ?></i></time>
                                 </h3>
-                                <address>De : <a href="wall.php?user_id=<?= $row['user_id']?>"><?= $row['author_name'] ?></a></p>
+                                <address>De : <a href='wall.php?user_id=<?= $row['user_id']?>'><?= $row['author_name'] ?></a></address>
                                 <div>
                                     <p><?= $row['content'] ?></p>
                                 </div>
