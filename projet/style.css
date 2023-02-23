@@ -201,8 +201,10 @@ form textarea{width:inherit;height: 15em;}
     padding: 2em;
 }
 
-#pseudoWal{
-    align-self: center;
+#pseudoWall{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
 #formArticle{
@@ -216,3 +218,9 @@ footer button {
     border: none;
     border-radius: 10%;
 }
+
+#usersSearched {
+    display: flex;
+    align-items: center;
+}
+

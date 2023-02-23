@@ -101,7 +101,8 @@
                     SELECT posts.content,
                     posts.id,
                     posts.created,
-                    users.alias as author_name,  
+                    users.alias as author_name,
+                    posts.user_id,  
                     count(likes.id) as like_number,  
                     GROUP_CONCAT(DISTINCT tags.label) AS taglist 
                     FROM posts
@@ -139,14 +140,11 @@
                     ?>
                     <article>
                         <h3>
-                            <time><i><?php echo $post['created'] ?></i></time>
+                            <time><i><?= $post['created'] ?></i></time>
                         </h3>
-                        <br>
+                        <address>De : <a href="wall.php?user_id=<?= $post['user_id'] ?>"><?= $post['author_name'] ?></a></p>
                         <div>
-                        <p><?php echo $post['content'] ?></p>
-                        </div>
-                        <div>
-                            <p> <i>De : <a href="wall.php?user_id=<?= $row['id'] ?>"><?php echo $post['author_name'] ?></a></i></p>
+                            <p><?= $post['content'] ?></p>
                         </div>
                         <footer>
                             <form action="news.php" method="POST"> 

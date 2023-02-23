@@ -31,9 +31,9 @@
                 //@todo: afficher le résultat de la ligne ci dessous, remplacer XXX par l'alias et effacer la ligne ci-dessous
                // echo "<pre>" . print_r($user, 1) . "</pre>";
                 ?>
-                <img src="userNotConnected.png" alt="Portrait de l'utilisatrice"/>
-                <section>
-                    <h3 id="pseudoWall"><?php echo $user['alias'] ?></h3>
+                <section id="pseudoWall">
+                    <img src="userNotConnected.png" alt="Portrait de l'utilisatrice"/>
+                    <h3 ><?php echo $user['alias'] ?></h3>
                 </section>
             </aside>
             <main>
@@ -78,13 +78,10 @@
                             
                         </div>                                            
                         <footer>
-                            <small>♥ <?= $post['like_number'] ?></small>
-                            <?php 
-                                $word = explode(",", $post['taglist']);
-                                for($i = 0; $i < sizeof($word); $i++) {
-                                   echo "<a href=''> #".$word[$i] ."</a>";
-                                }
-                            ?>
+                            <form action="news.php" method="POST"> 
+                                <button type="submit" name="liked" value=<?=$post['id']?>>♥</button>
+                                <label><?=$post['like_number']?></label>
+                            </form>
                         </footer>
                     </article>
                 <?php }}else {
