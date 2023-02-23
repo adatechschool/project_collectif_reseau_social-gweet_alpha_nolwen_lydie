@@ -28,7 +28,7 @@
                     $lesInformations = $mysqli->query($laQuestionEnSql);
                     $num_rows = mysqli_num_rows($lesInformations);
                     if($num_rows == 0) {
-                        ?> <p>Vous ne suivez personne</p> <?php
+                        ?> <p>Vous n'êtes suivis par personne</p> <?php
                     } else {
                         ?> <div style="display: flex; flex-direction: row;"> <?php
                         foreach($lesInformations as $row) {
