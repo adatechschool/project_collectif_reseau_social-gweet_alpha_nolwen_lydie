@@ -15,7 +15,7 @@
                         <meta name="theme-color" content="#ffffff">
                 </head>
         <header>
-        <?php
+  <?php
                 if(isset($_SESSION['admin'])) {
                         ?>
                         <a href='admin.php'><img src="newLogo.png" alt="Logo de notre réseau social"/></a>

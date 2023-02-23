@@ -38,3 +38,6 @@ VALUES (NULL, '9', 'J\'adore Citadelles ! Ce jeu de stratégie et de bluff est p
     efficace. Nous avons passé des heures à rire et à deviner les mots, c\'était une soirée mémorable ! Depuis ce jour,
     Unanimo est devenu un incontournable pour toutes nos soirées jeux. #unanimo #jeudecartes #anecdotejeu', 
     '2023-02-22 19:04:24', NULL);
+
+    INSERT INTO `users` (`id`, `email`, `password`, `alias`) VALUES (NULL, 'admin@admin.fr', '21232f297a57a5a743894a0e4a801fc3', 'administrateur')
+
